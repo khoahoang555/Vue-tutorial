@@ -3,6 +3,7 @@
     <learning-resource
       v-for="resource in resources"
       :key="resource.id"
+      :id="resource.id"
       :title="resource.title"
       :description="resource.description"
       :link="resource.link"
@@ -13,10 +14,10 @@
 <script>
 import LearningResource from '@/components/learning-resources/LearningResource.vue';
 export default {
+  inject: ['resources'],
   components: {
     LearningResource
   },
-  props: ['resources']
 }
 </script>
 
