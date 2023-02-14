@@ -1,13 +1,14 @@
 <template>
-  <div class="badge">{{ content }}</div>
+  <span class="badge" :class="customBadge">
+    <slot></slot>
+  </span>
 </template>
 
 <script>
 export default {
   props: {
-    content: {
-      type: String,
-      required: true
+    customBadge: {
+      type: String
     }
   }
 }
@@ -15,12 +16,15 @@ export default {
 
 <style scoped>
 .badge {
-  display: flex;
+  display: inline-block;
   padding: 2px 20px;
-  border: 1px solid;
   border-radius: 20px;
   background-color: #45006d;
   color: #ffffff;
-  margin-left: 10px;
+}
+.badge-warning {
+  background-color: #F0B800 !important;
+  color: #000000 !important;
+  font-weight: bold;
 }
 </style>

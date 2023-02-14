@@ -12,7 +12,8 @@ export default {
 
 <style scoped>
 .container {
-  position: relative;
+  display: flex;
+  flex-flow: column;
   margin: 0 auto;
   max-width: 1540px;
 }

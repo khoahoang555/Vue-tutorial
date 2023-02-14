@@ -6,7 +6,7 @@ import PageCart from "@/pages/PageCart";
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        { path: '/', redirect: '/products' },
+        { path: '/', redirect: '/cart' },
         {
             name: 'products',
             path: '/products',

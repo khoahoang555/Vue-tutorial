@@ -1,5 +1,5 @@
 <template>
-  <button class="btn" :class="btnClass">{{ content }}</button>
+  <button class="btn" :class="btnCustom">{{ content }}</button>
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
       type: String,
       required: true
     },
-    btnClass: {
+    btnCustom: {
       type: String,
       default: "btn-default"
     }
@@ -30,5 +30,12 @@ export default {
 }
 .btn-default:hover {
   background-color: #f0d5ff !important;
+}
+.btn-cart {
+  background-color: #45006d;
+  color: #ffffff;
+}
+.btn-cart:hover {
+  background-color: #760AB4 !important;
 }
 </style>

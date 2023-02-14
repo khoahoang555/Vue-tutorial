@@ -9,7 +9,8 @@
       </div>
       <div class="header-link">
         <router-link to="/cart">Cart</router-link>
-        <base-badge content="0"></base-badge>
+        <div class="margin-custom"></div>
+        <base-badge>0</base-badge>
       </div>
     </div>
     <div class="header-item">
@@ -47,6 +48,10 @@ header {
   font-size: 16px;
   text-decoration: none;
   font-weight: bold;
+}
+
+.margin-custom {
+  margin-right: 10px;
 }
 
 .icon {
