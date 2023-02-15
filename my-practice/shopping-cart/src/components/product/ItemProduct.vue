@@ -10,7 +10,11 @@
         {{ '$' + product.price }}
       </base-badge>
       <p class="cart-description">{{ product.description }}</p>
-      <base-button btn-custom="btn-cart" content="Add to Cart"></base-button>
+      <base-button
+          btn-custom="btn-cart"
+          content="Add to Cart"
+          @click="addProduct(product.id)"
+      ></base-button>
     </div>
   </base-cart>
 </template>
@@ -21,6 +25,12 @@ export default {
   computed: {
     loadImage() {
       return require('@/assets/images/' + this.product.image);
+    }
+  },
+  methods: {
+    addProduct(id) {
+      console.log(id);
+      this.$store.commit('updateCart', id);
     }
   }
 }

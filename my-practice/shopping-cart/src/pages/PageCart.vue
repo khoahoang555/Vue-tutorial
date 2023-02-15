@@ -5,7 +5,7 @@
     <div class="page-cart-total">
       <h3>Total Amount: </h3>
       <base-badge custom-badge="font-bold">
-        <b style="font-size: 18px">$329.97</b>
+        <b style="font-size: 18px">$ {{ infoCart.totalAmount }}</b>
       </base-badge>
     </div>
     <item-cart></item-cart>
@@ -16,8 +16,12 @@
 import ItemCart from "@/components/cart/ItemCart.vue";
 
 export default {
-  components: {ItemCart}
-
+  components: {ItemCart},
+  computed: {
+    infoCart() {
+      return this.$store.getters.getCart;
+    }
+  }
 }
 </script>
 

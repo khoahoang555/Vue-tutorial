@@ -38,4 +38,12 @@ export default {
 .btn-cart:hover {
   background-color: #760AB4 !important;
 }
+.btn-cart-remove {
+  border: none;
+  background-color: #8f0030;
+  color: #ffffff;
+}
+.btn-cart-remove:hover {
+  background-color: #53001c !important;
+}
 </style>

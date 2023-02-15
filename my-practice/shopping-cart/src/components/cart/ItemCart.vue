@@ -16,7 +16,9 @@
     </div>
     <div class="separate"></div>
     <div class="custom-margin"></div>
-    <base-button content="Remove"></base-button>
+    <div class="cart-remove">
+        <base-button content="Remove" btn-custom="btn-cart-remove"></base-button>
+    </div>
   </base-cart>
 </template>
 
@@ -68,5 +70,8 @@ export default {
 }
 .custom-margin {
   margin-bottom: 10px;
+}
+.cart-remove {
+  align-self: center;
 }
 </style>
