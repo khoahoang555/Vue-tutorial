@@ -37,6 +37,7 @@ export default {
 }
 .btn-cart:hover {
   background-color: #760AB4 !important;
+  cursor: pointer;
 }
 .btn-cart-remove {
   border: none;

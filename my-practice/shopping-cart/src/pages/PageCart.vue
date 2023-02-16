@@ -8,7 +8,7 @@
         <b style="font-size: 18px">$ {{ infoCart.totalAmount }}</b>
       </base-badge>
     </div>
-    <item-cart></item-cart>
+    <item-cart v-for="product in infoCart.products" :key="product.id" :product="product"></item-cart>
   </div>
 </template>
 

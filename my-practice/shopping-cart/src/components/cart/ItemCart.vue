@@ -4,15 +4,15 @@
       <img src="@/assets/images/Good_Food_Display_-_NCI_Visuals_Online.jpg">
     </div>
     <div class="cart-title">
-      <h3>Book Collection</h3>
+      <h3>{{ product.title }}</h3>
     </div>
     <div class="cart-detail">
-      <p>Price per item: <b>$99.99</b></p>
-      <p>Quantity: <b>2</b></p>
+      <p>Price per item: <b>${{ product.price }}</b></p>
+      <p>Quantity: <b>{{ product.quantity }}</b></p>
     </div>
     <div class="separate"></div>
     <div class="cart-total">
-      <b>Total: $199.98</b>
+      <b>Total: ${{ product.total }}</b>
     </div>
     <div class="separate"></div>
     <div class="custom-margin"></div>
@@ -24,7 +24,7 @@
 
 <script>
 export default {
-
+  props: ['product']
 }
 </script>
 

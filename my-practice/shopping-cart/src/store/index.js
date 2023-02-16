@@ -14,13 +14,14 @@ const store = createStore({
                 {
                     id: 2,
                     title: "Food Book",
-                    price: 99.99,
+                    price: 33.15,
                     description: "This is demo 2",
                     image: "Good_Food_Display_-_NCI_Visuals_Online.jpg"
                 }
             ],
             cart: {
                 totalAmount: 0,
+                totalProduct: 0,
                 products: []
             }
         }
@@ -31,21 +32,30 @@ const store = createStore({
         },
         getCart(state) {
             return state.cart;
+        },
+        getTotalProductInCart(state) {
+            return state.cart.totalProduct;
         }
     },
     mutations: {
         updateCart(state, payload) {
-            // const id = payload.value;
-            console.log(payload);
             const idxProduct = state.products.findIndex(product => product.id === payload);
 
             state.cart.totalAmount = Math.round((state.cart.totalAmount + state.products[idxProduct].price) * 100) / 100;
+            state.cart.totalProduct  = state.cart.totalProduct + 1;
 
-            // const idxProductCart = state.cart.products.findIndex(product => product.id === payload);
-            // if (index) {
-            //
-            // }
-            //console.log(index);
+            const idxProductCart = state.cart.products.findIndex(product => product.id === payload);
+            if (idxProductCart != -1) {
+                state.cart.products[idxProductCart].quantity = state.cart.products[idxProductCart].quantity + 1;
+                state.cart.products[idxProductCart].total = state.cart.products[idxProductCart].total + state.cart.products[idxProductCart].price;
+            } else {
+                let obj = {
+                    ...state.products[idxProduct]
+                }
+                obj.quantity = 1;
+                obj.total = state.products[idxProduct].price;
+                state.cart.products.push(obj);
+            }
         }
     }
 });

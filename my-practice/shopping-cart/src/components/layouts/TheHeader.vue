@@ -10,7 +10,7 @@
       <div class="header-link">
         <router-link to="/cart">Cart</router-link>
         <div class="margin-custom"></div>
-        <base-badge>0</base-badge>
+        <base-badge>{{ getTotalProductInCart }}</base-badge>
       </div>
     </div>
     <div class="header-item">
@@ -21,7 +21,11 @@
 
 <script>
 export default {
-
+  computed: {
+    getTotalProductInCart() {
+      return this.$store.getters.getTotalProductInCart;
+    }
+  }
 }
 </script>
 
