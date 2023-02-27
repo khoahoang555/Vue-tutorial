@@ -5,7 +5,7 @@
         <h2>Register as a coach now!</h2>
         <coach-form @save-data="saveData"></coach-form>
       </base-card>
-    </section>
+  </section>
   </div>
 </template>
 
