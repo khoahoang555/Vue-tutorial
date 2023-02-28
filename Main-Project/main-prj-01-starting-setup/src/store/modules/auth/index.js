@@ -6,8 +6,8 @@ export default {
     state() {
         return {
             userId: null,
-            toke: null,
-            tokenExpiration: null
+            token: null,
+            didAutoLogout: false
         };
     },
     mutations,
