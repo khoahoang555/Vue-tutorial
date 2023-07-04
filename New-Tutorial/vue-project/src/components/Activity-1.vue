@@ -6,13 +6,25 @@
 </form>
 <ul>
   <li>
-    
+    <p>Apples</p>
+    <button>Remove</button>
+  </li>
+  <li>
+    <p>Bananas</p>
+    <button>Remove</button>
+  </li>
+  <li>
+    <p>Carrots</p>
+    <button>Remove</button>
   </li>
 </ul>
+<button>Delete All</button>
 </template>
 
 <script>
 
 </script>
 
-<style></style>
+<style>
+
+</style>

@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Exercise from './components/Exercise1-12.vue'
+import Exercise from './components/Activity-1.vue'
 export default {
   components: {
     Exercise
