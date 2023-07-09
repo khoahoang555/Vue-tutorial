@@ -6,5 +6,6 @@ import ShoppingList from "./components/ShoppingList.vue";
   <ShoppingList></ShoppingList>
 </template>
 
-<style scoped>
+<style>
+@import "./assets/styles/global.scss";
 </style>
