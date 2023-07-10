@@ -3,7 +3,13 @@
     <div class="header">
       <h2>Shopping List</h2>
       <form v-on:submit.prevent>
-        <input placeholder="Press enter to add new item" type="text" v-model="product"/>
+        <input
+            placeholder="Press enter to add new item"
+            type="text"
+            @keyup.enter="addProduct"
+            v-model="product"
+            ref="product"
+        />
         <button type="button" @click="addProduct">Add item</button>
       </form>
     </div>
@@ -24,10 +30,10 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       products: [
-          'Apples', 'Banana', 'Lemon'
+        'Apples', 'Banana', 'Lemon'
       ],
       product: ''
     }
@@ -39,6 +45,7 @@ export default {
       }
       this.products.push(this.product);
       this.clearProduct();
+      this.$refs.product.focus();
     },
     removeProduct(index) {
       this.products.splice(index, 1);
@@ -66,20 +73,25 @@ export default {
 .container {
   margin: 50px auto;
   width: 700px;
+
   .header {
     margin: 0 auto;
     width: 600px;
+
     h2 {
       margin: 10px 0px 20px;
       text-align: center;
     }
+
     form {
       display: flex;
       justify-content: space-between;
+
       input {
         width: 85%;
         height: 30px;
       }
+
       button {
         width: 15%;
         margin-left: 15px;
@@ -92,21 +104,26 @@ export default {
       }
     }
   }
+
   .body {
     width: 600px;
     margin: 0 auto;
     text-align: center;
+
     ul {
       border: 1px solid #C7C7C7;
       list-style: none;
       padding: 30px 25px;
+
       li {
         display: flex;
         justify-content: space-between;
         padding: 10px 0px;
+
         p {
           margin: 0;
         }
+
         a {
           text-decoration: none;
           color: red;
@@ -115,6 +132,7 @@ export default {
         }
       }
     }
+
     button {
       width: 90px;
       height: 40px;
